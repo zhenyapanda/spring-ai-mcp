@@ -103,7 +103,7 @@ public final class ToolHelper {
 	 * @throws RuntimeException if there's an error during the function execution
 	 */
 	public static McpServerFeatures.SyncToolRegistration toSyncToolRegistration(FunctionCallback functionCallback) {
-		var tool = new McpSchema.Tool(functionCallback.getName(), functionCallback.getName(),
+		var tool = new McpSchema.Tool(functionCallback.getName(), functionCallback.getDescription(),
 				functionCallback.getInputTypeSchema());
 
 		return new McpServerFeatures.SyncToolRegistration(tool, request -> {
@@ -142,7 +142,7 @@ public final class ToolHelper {
 	@Deprecated
 	public static McpServer.ToolRegistration toToolRegistration(FunctionCallback functionCallback) {
 
-		var tool = new McpSchema.Tool(functionCallback.getName(), functionCallback.getName(),
+		var tool = new McpSchema.Tool(functionCallback.getName(), functionCallback.getDescription(),
 				functionCallback.getInputTypeSchema());
 
 		return new McpServer.ToolRegistration(tool, request -> {
